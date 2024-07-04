@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 const AddNote = () => {
-    const [noteContent, setContent] = useState('')
+    const [noteContent, setNoteContent] = useState('')
     const contentLimit = 250;
 
-    function handleChange(){
-
+    function handleChange(event){
+        setNoteContent(event.target.value)
     }
     function handleAddNoteClick(){
 

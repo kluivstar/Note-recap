@@ -56,6 +56,10 @@ body{
   margin: 5px 0px;
   
 }
+.add-note:hover{
+  background-color: white;
+  color: black;
+}
 textarea{
   background-color: grey;
   padding: 20px;
