@@ -41,6 +41,11 @@ body{
   justify-content: space-between;
   gap: 100px;
 }
+.content-note-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .date{
   margin-top: 8px;
 }
@@ -53,7 +58,6 @@ body{
   color: white;
   border: none;
   border-radius: 5px;
-  margin: 5px 0px;
   
 }
 .add-note:hover{
@@ -61,6 +65,12 @@ body{
   color: black;
 }
 textarea{
+  background-color: grey;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+}
+.new-note{
   background-color: grey;
   padding: 20px;
   width: 250px;

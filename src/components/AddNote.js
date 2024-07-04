@@ -12,7 +12,6 @@ const AddNote = () => {
     }
   return (
     <div className='new-note'>
-        <div>
             <textarea
                 placeholder='Saying something...'
                 value={noteContent}
@@ -22,11 +21,10 @@ const AddNote = () => {
             >
 
             </textarea>
-            <div note-footer>
-                <small></small>
+            <div className='content-note-footer'>
+                <small>{contentLimit - noteContent.length} left</small>
                 <button onClick={handleAddNoteClick} className='add-note'>Add Note</button>
             </div>
-        </div>
     </div>
   )
 }
