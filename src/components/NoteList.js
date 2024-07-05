@@ -10,11 +10,11 @@ const NoteList = ({notes, handleAddNote, handleRemoveNote}) => {
                 id={note.id}
                 content={note.content}
                 date={note.date}
-                handleAddNote={handleAddNote}
+                handleRemoveNote={handleRemoveNote}
             />)
             
         )}
-        <AddNote handleRemoveNote={handleRemoveNote}/>
+        <AddNote handleAddNote={handleAddNote}/>
     </div>
   )
 }

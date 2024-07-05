@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
 
-const AddNote = () => {
+const AddNote = ({handleAddNote}) => {
     const [noteContent, setNoteContent] = useState('')
     const contentLimit = 250;
 
+    //this function is triggered by the onChange event of the <textarea>. It updates the noteText state with the current value of the <textarea> as long as the length does not exceed characterLimit.
     function handleChange(event){
-        setNoteContent(event.target.value)
+        if(contentLimit - event.target.value.length >=0){
+        setNoteContent(event.target.value)}
     }
-    function handleAddNoteClick(){
 
-    }
+    //Here we check if noteText has non-whitespace content (noteContent.trim().length > 0). If true:It calls handleAddNote, a function passed as a prop, with noteContent as an argument. This allows the parent component to handle saving new the note. 
+    function handleAddNoteClick(){
+        if(noteContent.trim().length > 0)
+
+            {
+                handleAddNote(noteContent)
+                setNoteContent('')
+            }        
+        }
   return (
     <div className='new-note'>
             <textarea

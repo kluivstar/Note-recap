@@ -39,18 +39,23 @@ const App = () => {
         }
   }, []) */
 
-  // to add note we create a blueprint/object that newly added notes fits in/fills
-/*   const addNote =(content)=> {
+  // 'content' parameter refers to the content of note we want to add.
+  // whenever over function executes the values within it is pass into content
+  const addNote = (content) => {
+    // A new note object is created using content parameter
+    // This is where the actual note content is stored.
         const date = new Date()
-        const newNote ={
+        const newNote = {
           id: nanoid(),
+          // content:content essentially means "set the text property of the newNote object to be equal to the value of the text parameter that was passed to the addNote function.
           content: content,
           date: date.toLocaleDateString()
         };
+        //The newNote object is then added to the existing notes array:
         const newNotes = [...notes, newNote]
         setNotes(newNotes)
   }
- */
+
   const removeNote =(id)=> {
         const newNotes = notes.filter(note => note.id !== id)
         setNotes(newNotes)
@@ -62,6 +67,7 @@ const App = () => {
         <div>
           <NoteList
               notes={notes}
+              handleAddNote={addNote}
               handleRemoveNote={removeNote}
           />
       </div>
