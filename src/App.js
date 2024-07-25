@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import {nanoid} from "nanoid"
 import NoteList from "./components/NoteList"
+import { useLocalStorage } from 'usehooks-ts'
 
 const App = () => {
-  const [notes, setNotes] = useState([
+  const [notes, setNotes] = useLocalStorage("counter",[
         {
           id: nanoid(),
           content: "First Note",
